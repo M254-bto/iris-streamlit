@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 import joblib
 from PIL import Image
-# import sklearn
-
-# print(sklearn.__version__)
 
 model = open('iris_Classifier.pkl', 'rb')
 model_ = joblib.load(model)
