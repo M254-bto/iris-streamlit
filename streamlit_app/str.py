@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 from PIL import Image
 
-model = open("iris_Classifier.pkl", "rb")
+model = open("iris_Classifier.pkl", "r")
 model_ = joblib.load(model)
 
 
