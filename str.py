@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from sklearn.datasets import load_iris
 import joblib
 from PIL import Image
 # import sklearn
@@ -12,7 +11,10 @@ model_ = joblib.load(model)
 
 
 def params_list():
-    return load_iris().feature_names
+    data = pd.read_csv('Iris.csv')
+    data = data.drop(data[['Id', 'Species']], axis=1)
+    return data.columns
+
 
 def images():
     setosa= Image.open('setosa.png')
@@ -38,7 +40,7 @@ values = []
 
 for parameter, parameter_df in zip(parameter_list, input_params_default):
  
-    values= st.sidebar.slider(label=parameter, key=parameter,value=float(parameter_df), min_value=0.0, max_value=8.0, step=0.1)
+    values= st.slider(label=parameter, key=parameter,value=float(parameter_df), min_value=0.0, max_value=8.0, step=0.1)
     input_params.append(values)
  
 input_params=pd.DataFrame([input_params],columns=parameter_list,dtype=float)
