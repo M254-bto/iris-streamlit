@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 from PIL import Image
 
-with open("https://github.com/M254-bto/iris-streamlit/blob/main/streamlit_app/iris_Classifier.pkl", "rb") as model:
+with open("./iris_Classifier.pkl", "rb") as model:
     model_ = joblib.load(model)
 
 
