@@ -3,7 +3,8 @@ import pandas as pd
 import joblib
 from PIL import Image
 
-model_ = joblib.load("iris_Classifier.pkl")
+with open('iris_Classifier.pkl','rb') as f:
+    model_ = joblib.load(f)
 
 
 def params_list():
