@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 from PIL import Image
 
-model_ = pickle.load(open('/iris.sav', 'rb'))
+model_ = pickle.load(open('iris.sav', 'rb'))
 
 
 def params_list():
