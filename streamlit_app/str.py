@@ -1,10 +1,9 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle
 from PIL import Image
 
-with open('iris_Classifier.pkl','rb') as f:
-    model_ = joblib.load(f)
+model_ = pickle.load(open('iris.sav', 'rb'))
 
 
 def params_list():
